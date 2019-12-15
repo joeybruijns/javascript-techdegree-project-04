@@ -11,7 +11,7 @@ class Game {
 
     startGame() {
         document.getElementById('overlay').style.display = 'none';
-        this.activePhrase = this.getRandomPhrase();
+        this.activePhrase = this.getRandomPhrase;
         this.activePhrase.addPhraseToDisplay();
     }
 
@@ -29,10 +29,22 @@ class Game {
     }
 
     checkForWin() {
+        // check all classes from list item if nothing is hidden
+        // return either true or false
 
     }
 
     gameOver() {
+        const overlay = document.getElementById('overlay');
+        const overlayMessage = document.querySelector('#overlay h1');
+        overlay.style.display = 'block';
 
+        if (this.checkForWin) {
+            overlay.setAttribute('class', 'win');
+            overlayMessage.textContent = 'Yeah, you win!!!';
+        } else {
+            overlay.setAttribute('class', 'lose');
+            overlayMessage.textContent = 'Better luck next time..';
+        }
     }
 }
