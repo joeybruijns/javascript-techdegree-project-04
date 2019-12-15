@@ -4,15 +4,38 @@
 
 class Phrase {
     constructor(phrase) {
-        this.phrase = phrase;
+        this.phrase = phrase.toLowerCase();
     }
 
+    /**
+     * Splits the phrase into an array of letters and displays those letters
+     * as list items to the game
+     */
     addPhraseToDisplay() {
+        const phraseDisplay = document.querySelector('#phrase ul');
+        const phraseLetters = this.phrase.split('');
 
+        phraseLetters.forEach(letter => {
+            let li = document.createElement("li");
+            li.textContent = letter;
+
+            if (li.textContent !== ' ') {
+                li.setAttribute('class', `hide letter ${letter}`);
+            } else {
+                li.setAttribute('class', 'space');
+            }
+
+            phraseDisplay.appendChild(li);
+        });
     }
 
-    checkLetter() {
-
+    /**
+     * Checks if the selected letter is present in the active phrase
+     * @param {String} selectedLetter - The selected letter by the player
+     * @returns {boolean}  - True if letter is present, false if it isn't
+     */
+    checkLetter(selectedLetter) {
+        return this.phrase.indexOf(selectedLetter) > -1;
     }
 
     showMatchedLetter() {
