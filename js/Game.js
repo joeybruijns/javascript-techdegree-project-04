@@ -15,6 +15,18 @@ class Game {
         this.activePhrase.addPhraseToDisplay();
     }
 
+    /**
+     * Creates phrases for use in game
+     * @return {array} An array of phrases that could be used in the game
+     * */
+    createPhrases(...phrase) {
+        this.phrases.push(phrase);
+    };
+
+    /**
+     *
+     * @returns {string}
+     */
     getRandomPhrase() {
         const randomNumber = Math.floor((Math.random() * this.phrases.length));
         return this.phrases[randomNumber];

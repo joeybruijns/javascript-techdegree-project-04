@@ -38,7 +38,16 @@ class Phrase {
         return this.phrase.indexOf(selectedLetter) > -1;
     }
 
-    showMatchedLetter() {
-
+    /**
+     * If a letter is a match, the class name of that letter is set to 'show'
+     * @param {string} letter - the matching letter we should show on the page
+     */
+    showMatchedLetter(letter) {
+        if (this.checkLetter(letter)) {
+            const allMatchingLetters = document.querySelectorAll(`.${letter}`);
+            allMatchingLetters.forEach(letter => {
+                letter.className = `show letter ${letter}`;
+            });
+        }
     }
 }
