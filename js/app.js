@@ -7,6 +7,7 @@ const startGameButton = document.getElementById('btn__reset');
 const qwertyButtons = document.getElementById('qwerty');
 const game = new Game();
 
+//TODO: Add the final phrases to the game
 game.createPhrases('dit is een test', 'nog een test', 'de laatste test');
 
 startGameButton.addEventListener('click', function() {

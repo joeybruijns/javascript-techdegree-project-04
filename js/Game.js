@@ -9,11 +9,16 @@ class Game {
         this.activePhrase = null;
     }
 
-    // ===> PUT ALL VARIABLES IN THE CONSTRUCTOR?????? //
+    //TODO: ===> PUT ALL VARIABLES IN THE CONSTRUCTOR??????
+    //TODO: Refactor code
 
     resetGame() {
         // remove all li items
-        
+        const list = document.querySelector('#phrase ul');
+        const listItems = document.querySelectorAll('#phrase ul > li');
+        for (let i = 0; i < listItems.length; i += 1) {
+            list.removeChild(list.lastElementChild);
+        }
 
         // update and enable all keys to use key class
         const letters =  document.querySelectorAll('.keyrow > button');
