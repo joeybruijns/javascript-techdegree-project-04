@@ -8,7 +8,7 @@ class Phrase {
     }
 
     /**
-     * Splits the phrase into an array of letters and displays those letters
+     * Splits the phrase into an array of letters and displays them
      * as list items to the game
      */
     addPhraseToDisplay() {
@@ -40,7 +40,7 @@ class Phrase {
 
     /**
      * If a letter is a match, the class name of that letter is set to 'show'
-     * @param {string} letter - the matching letter we should show on the page
+     * @param {string} letter - the matching letter that we show on the page
      */
     showMatchedLetter(letter) {
         if (this.checkLetter(letter)) {
