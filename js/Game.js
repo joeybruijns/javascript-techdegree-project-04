@@ -42,8 +42,6 @@ class Game {
      * Starts the game by hiding the overlay and adding a random phrase to the display
      */
     startGame() {
-        this.resetGame();
-
         document.getElementById('overlay').style.display = 'none';
         this.activePhrase = this.getRandomPhrase();
         this.activePhrase.addPhraseToDisplay();
@@ -128,5 +126,6 @@ class Game {
             overlay.setAttribute('class', 'lose');
             overlayMessage.textContent = 'Better luck next time...';
         }
+        this.resetGame();
     }
 }
